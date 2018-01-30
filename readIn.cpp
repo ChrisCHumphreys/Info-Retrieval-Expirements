@@ -11,11 +11,12 @@
 
 // test files are littleTest.txt and 2000010.txt
 const std::string FILE_BEING_READ = "austen-sense-758.txt";
+const std::string PATH_TO_TEXT_FILES = "books/";
 
 using namespace std;
 
 int main() {
-  Book book1(FILE_BEING_READ);
+  Book book1(PATH_TO_TEXT_FILES + FILE_BEING_READ);
   book1.test();
   book1.printWhitespaceArray();
 }

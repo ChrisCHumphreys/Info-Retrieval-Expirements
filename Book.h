@@ -61,7 +61,13 @@ public:
    *   Parameterized Book Constructor.  When created reads into 
    *   this.word all the words in the file specified by 'filename'.  Also
    *   creates a whitespace seperated index of terms.
+   * 
+   * Inputs:
+   *  string fileName
+   *    A string representing the filename of a text file.  Must be a
+   *    text '.txt' file at this time.
    */
+  
   ~Book();
   /*
    * Description:
@@ -73,7 +79,14 @@ public:
    * Description:
    *   Prints to the consolse the contents of 'wordsArray' with each
    *   element getting one line.  Mainly for testing.
+   *
+   * Inputs:
+   *   None - Prints to the console
+   *
+   * Outpus:
+   *   None
    */
+  
   void test();
   /* 
    * Desription: 
