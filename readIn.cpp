@@ -10,7 +10,7 @@
 #include "Book.h"
 
 // test files are littleTest.txt and 2000010.txt
-const std::string FILE_BEING_READ = "2000010.txt";
+const std::string FILE_BEING_READ = "austen-sense-758.txt";
 
 using namespace std;
 

@@ -53,7 +53,7 @@ void Book::findInitialSize() {
 void Book::makeWhitespaceIndex() {
   // allocate memory for the array
   wordsArrayPtr = new std::string[numOfWords];
-  
+
   // open the file
   std::ifstream inputFile;
   inputFile.open(fileName.c_str());
