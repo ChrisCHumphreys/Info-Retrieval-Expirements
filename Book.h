@@ -74,7 +74,7 @@ public:
    *   Destructor, frees up wordsArrayPtr.
    */
 
-  void printWhitespaceArray();
+  void printCurrentArray();
   /*
    * Description:
    *   Prints to the consolse the contents of 'wordsArray' with each
@@ -85,6 +85,20 @@ public:
    *
    * Outpus:
    *   None
+   */
+
+  void removePunctuationFrontBack();
+  /*
+   * Description:
+   *   Goes through the document and updates array to remove all punctuation
+   *   at the front or back of words.
+   *
+   * Inputs:
+   *   None:
+   *     Works on its own array of words and updates to remove the whitespace.
+   *
+   * Outputs:
+   *   None:
    */
   
   void test();

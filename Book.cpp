@@ -66,8 +66,20 @@ void Book::makeWhitespaceIndex() {
   inputFile.close();
 };
 
-void Book::printWhitespaceArray() {
+void Book::printCurrentArray() {
   for (int i = 0; i < numOfWords; i++) {
     std::cout << *(wordsArrayPtr + i) << std::endl;
+  }
+}
+
+void Book::removePunctuationFrontBack() {
+  for (int i = 0; i < numOfWords; i++) {
+    // convert to c string and loop through
+    for (int j = 0; j < wordsArrayPtr[i].length(); j++) {
+      if (std::ispunct(wordsArrayPtr[i].at(j))) {
+	wordsArrayPtr[i].at(j) = '*';
+      }
+    }
+    std::cout << wordsArrayPtr[i].length() << std::endl;
   }
 }
