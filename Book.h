@@ -46,6 +46,20 @@ private:
    * Outputs:
    *   None - Creates a dynamic array pointed to by 'wordsArray'.
    */
+
+  void updateBookAttributes();
+  /*
+   * Description:
+   *   Resizes the array of words and updates attributes of Book
+   *   accordingly.  Called after doing things like removing words.
+   *
+   * Inputs:
+   *   None
+   *
+   * Outputs:
+   *   None - updates 'wordsArrayPtr', and 'numOfWords' attributes
+   *
+   */
   
 public:
   Book();

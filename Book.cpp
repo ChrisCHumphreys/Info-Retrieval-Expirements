@@ -73,13 +73,26 @@ void Book::printCurrentArray() {
 }
 
 void Book::removePunctuationFrontBack() {
+  // loop through the array and check all words
   for (int i = 0; i < numOfWords; i++) {
-    // convert to c string and loop through
-    for (int j = 0; j < wordsArrayPtr[i].length(); j++) {
-      if (std::ispunct(wordsArrayPtr[i].at(j))) {
-	wordsArrayPtr[i].at(j) = '*';
-      }
+     for (int j = 0; j < wordsArrayPtr[i].length(); j++) {
+       if (std::ispunct(wordsArrayPtr[i].at(j)) ||
+	   (wordsArrayPtr[i].at(j) == '-') ||
+	   (wordsArrayPtr[i].at(j) == '"')) {
+	 // just use the built in erase function.
+	 wordsArrayPtr[i].erase(j, 1);
+	 // bump back j by 1 to account for changed array size
+	 j--;
+       }
     }
     std::cout << wordsArrayPtr[i].length() << std::endl;
   }
+}
+
+void Book::updateBookAttributes() {
+  // reset numOfWords to 0;
+  int oldWordCount = numOfWords
+  numOfWords = 0;
+  // get new array size
+  for (int i = 0; i < 
 }
