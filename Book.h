@@ -101,11 +101,11 @@ public:
    *   None
    */
 
-  void removePunctuationFrontBack();
+  void cleanWords();
   /*
    * Description:
    *   Goes through the document and updates array to remove all punctuation
-   *   at the front or back of words.
+   *   and numeric digits from words.
    *
    * Inputs:
    *   None:
@@ -126,5 +126,18 @@ public:
    *
    * Outputs:
    *   None
+   */
+
+  void alphabetizeWords();
+  /*
+   * Description:
+   *   Loops through the books wordsArray and updates the order of the words
+   *   to put in alphabetical order.
+   *
+   * Inputs:
+   *   None - works on wordsArrayPtr
+   *
+   * Outputs:
+   *   None - after completion all words in wordsArrayPtr are in order
    */
 };

@@ -12,7 +12,13 @@ Description:
   and be able to be reasonably confident that the results acheived were those desired by the user.
   
 TODO:
-  A ton, this is my initial upload.  
+  In progress -  
+  Make a utilities class with a merge sort algorithm.  should accept an usorted array pointer and
+  return a sorted array pointer.
+
+  Future -
+  Create a Library class that contains the book objects
+  make a main that allows a user to specify the library folder and do boolean searches.
   
 Usage:
   On linux systems with g++ and make, just go into the root of the project and type `make`.  There will be 

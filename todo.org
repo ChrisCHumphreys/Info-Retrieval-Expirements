@@ -1,0 +1,6 @@
+* Tokenizer
+* TODO make alphabetizer function
+* TODO make removedouble function
+* TODO make final constuctor which does everything
+* TODO make a utilities library
+** TODO make a merge sort function in utilities library

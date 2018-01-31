@@ -23,6 +23,7 @@ Book::Book(std::string newFile) {
 }
 
 Book::~Book() {
+  wordsArrayPtr = 0;
   delete[] wordsArrayPtr;
 }
 
@@ -72,13 +73,14 @@ void Book::printCurrentArray() {
   }
 }
 
-void Book::removePunctuationFrontBack() {
+void Book::cleanWords() {
   // loop through the array and check all words
   for (int i = 0; i < numOfWords; i++) {
      for (int j = 0; j < wordsArrayPtr[i].length(); j++) {
        if (std::ispunct(wordsArrayPtr[i].at(j)) ||
 	   (wordsArrayPtr[i].at(j) == '-') ||
-	   (wordsArrayPtr[i].at(j) == '"')) {
+	   (wordsArrayPtr[i].at(j) == '"') ||
+	   (isdigit(wordsArrayPtr[i].at(j)))) {
 	 // just use the built in erase function.
 	 wordsArrayPtr[i].erase(j, 1);
 	 // bump back j by 1 to account for changed array size
@@ -87,12 +89,51 @@ void Book::removePunctuationFrontBack() {
     }
     std::cout << wordsArrayPtr[i].length() << std::endl;
   }
+  updateBookAttributes();
 }
 
 void Book::updateBookAttributes() {
-  // reset numOfWords to 0;
-  int oldWordCount = numOfWords
+  // make a new temp pointer and initialize to wordsArrayPtr
+  std::string* tempWordPtr = 0;
+  tempWordPtr = wordsArrayPtr;
+  
+  // reset numOfWords to 0
+  int oldWordCount = numOfWords;
   numOfWords = 0;
+
+  // temp counter variable
+  int counter = 0;
+  
   // get new array size
-  for (int i = 0; i < 
+  for (int i = 0; i < oldWordCount; i++) {
+    if (wordsArrayPtr[i].length() != 0) {
+      numOfWords++;
+    }
+  }
+
+  // delete old array and create new one.
+  // delete[] wordsArrayPtr;
+  wordsArrayPtr = new std::string[numOfWords];
+
+  // read in all words except blank ones
+  for (int i = 0; i < oldWordCount; i++) {
+    if (tempWordPtr[i].length() != 0) {
+      wordsArrayPtr[counter] = tempWordPtr[i];
+      counter++;
+    }
+  }
+
+  delete[] tempWordPtr;
+  tempWordPtr = 0;
+}
+
+void Book::alphabetizeWords() {
+  // make temp variables
+  std::string* = tempWordPtr = 0;
+  tempWordPtr = wordsArrayPtr;
+  // create two temp arrays for sorting algorithm
+  
+  // attempting to use merge sort
+  int middle = numOfWords/2;
+
 }
