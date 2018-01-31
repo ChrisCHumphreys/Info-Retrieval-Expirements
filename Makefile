@@ -16,7 +16,7 @@ CFLAGS=-c -Wall $(DEBUG)
 
 all: $(TARGET)
 
-$(TARGET): readIn.o Book.o
+$(TARGET): readIn.o Book.o Utils.o
 	$(CC) readIn.o Book.o -o $(TARGET)
 
 readIn.o: readIn.cpp Book.h
@@ -24,6 +24,9 @@ readIn.o: readIn.cpp Book.h
 
 Book.o: Book.cpp Book.h
 	$(CC) $(CFLAGS) Book.cpp
+
+Utils.o: Utils.cpp Utils.o
+	$(CC) $(CFLAGS) Utils.cpp
 
 clean:
 	rm *.o *~ $(TARGET)

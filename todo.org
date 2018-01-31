@@ -8,6 +8,8 @@
 
 * Library Class
 ** TODO make the class
+** TODO make the .cpp file
+** TODO update the Makefile
 
 * General
 ** DONE update readme
