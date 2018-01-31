@@ -27,4 +27,7 @@ Usage:
 Assumptions:
   This is very much code for testing and playing around.  To have it work on other files you need to go to 
   the code in readIn.cpp and update the constant at the top of the file.  Good Luck!
-  
+
+Note:
+  All .txt file for testing should be public domain.  If you notice one is not please let me know so it
+  can be removed.
