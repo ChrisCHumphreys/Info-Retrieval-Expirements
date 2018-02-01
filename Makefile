@@ -16,13 +16,13 @@ CFLAGS=-c -Wall $(DEBUG)
 
 all: $(TARGET)
 
-$(TARGET): readIn.o Book.o Utils.o
+$(TARGET): readIn.o Book.o 
 	$(CC) readIn.o Book.o -o $(TARGET)
 
 readIn.o: readIn.cpp Book.h
 	$(CC) $(CFLAGS) readIn.cpp
 
-Book.o: Book.cpp Book.h
+Book.o: Book.cpp Book.h Utils.o
 	$(CC) $(CFLAGS) Book.cpp
 
 Utils.o: Utils.cpp Utils.o

@@ -5,7 +5,8 @@
  * Description: Definitions of methods of Book Class.
  */
 
-#include "Book.h"
+#include "Book.h"   // header file
+#include "Utils.h"  
 #include <iostream> //STDIN, STDOUT
 #include <fstream>  //ifstream
 
@@ -76,7 +77,7 @@ void Book::printCurrentArray() {
 void Book::cleanWords() {
   // loop through the array and check all words
   for (int i = 0; i < numOfWords; i++) {
-     for (int j = 0; j < wordsArrayPtr[i].length(); j++) {
+     for (int j = 0; j < wordsArrayPtr[i].size(); j++) {
        if (std::ispunct(wordsArrayPtr[i].at(j)) ||
 	   (wordsArrayPtr[i].at(j) == '-') ||
 	   (wordsArrayPtr[i].at(j) == '"') ||
@@ -126,15 +127,16 @@ void Book::updateBookAttributes() {
   delete[] tempWordPtr;
   tempWordPtr = 0;
 }
-/*
+
+
 void Book::alphabetizeWords() {
   // make temp variables
-  std::string* = tempWordPtr = 0;
-  tempWordPtr = wordsArrayPtr;
+  //std::string* = tempWordPtr = 0;
+  //tempWordPtr = wordsArrayPtr;
   // create two temp arrays for sorting algorithm
-  
+  wordsArrayPtr = Utils::mergeSort(wordsArrayPtr);
   // attempting to use merge sort
   int middle = numOfWords/2;
 
-}
+};
 */

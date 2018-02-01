@@ -8,15 +8,7 @@
 #include <string>
 
 
-class TokenizerUtilities {
-  /*
-   * Description:
-   *   TokenizerUtilities is just a collection of functions that could
-   *   be needed by the the book or library classes.
-   */
-  
- public:
-  std::string*  mergeSort(std::string* unsorted);
+std::string*  mergeSort(std::string* unsorted);
   /*
    * Description:
    *   Sorts an array of strings into alphabetical order, using a
@@ -30,4 +22,4 @@ class TokenizerUtilities {
    *   string*;
    *     Returns a pointer to a sorted list.
    */
-};
+

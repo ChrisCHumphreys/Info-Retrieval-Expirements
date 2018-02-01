@@ -8,6 +8,7 @@
 #include <iostream>
 #include "Utils.h"
 
-std::string* TokenizerUtilities::mergeSort(std::string* unsorted) {
+std::string* Utils::mergeSort(std::string* unsorted) {
   std::cout << "Merge Sort Ran" << std::endl;
+  return unsorted;
 };
