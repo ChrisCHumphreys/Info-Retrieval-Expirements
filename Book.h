@@ -141,4 +141,9 @@ public:
    * Outputs:
    *   None - after completion all words in wordsArrayPtr are in order
    */
+
+  void removeDuplicates();
+  /*
+   * TODO - Add Documentation
+   */
 };

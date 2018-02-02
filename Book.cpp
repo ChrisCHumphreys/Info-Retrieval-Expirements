@@ -151,8 +151,8 @@ void Book::removeDuplicates() {
 
   // copy 1 of each term (no doubles) to temp array
   for (int i = 0; i < numOfWords; i++) {
-    if (tempWordPtr[i] != tempWordPtr[i+1]) {
-      tempWordPtr[tempCounter] = tempWordPtr[i];
+    if (wordsArrayPtr[i] != wordsArrayPtr[i+1]) {
+      tempWordPtr[tempCounter] = wordsArrayPtr[i];
       tempCounter++;
     }
   }

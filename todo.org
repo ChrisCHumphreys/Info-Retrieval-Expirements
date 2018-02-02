@@ -21,3 +21,4 @@ p
 
 * General
 ** DONE update readme
+** TODO add utf-32 support

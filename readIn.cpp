@@ -10,7 +10,7 @@
 #include "Book.h"
 
 // test files are littleTest.txt and 2000010.txt
-const std::string FILE_BEING_READ = "littleTest.txt";
+const std::string FILE_BEING_READ = "warpeace.txt";
 const std::string PATH_TO_TEXT_FILES = "books/";
 
 using namespace std;
@@ -20,5 +20,6 @@ int main() {
   // book1.test();
   book1.cleanWords();
   book1.alphabetizeWords();
+  book1.removeDuplicates();
   book1.printCurrentArray();
 }
