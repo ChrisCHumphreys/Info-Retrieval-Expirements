@@ -1,7 +1,7 @@
 * Tokenizer*
-** TODO Remove numbers from words array
+** DONE Remove numbers from words array
 ** DONE make alphabetizer function
-** TODO make a turn to lowercase function
+** DONE make a turn to lowercase function
 ** TODO make removeDouble function
 ** TODO make final constuctor which does everything
 ** DONE make a utilities library
@@ -11,9 +11,12 @@
 * Library Class
 ** TODO make the class
 ** TODO make the .cpp file
-** TODO update the Makefile
-*** TODO remvoe unnecessary makefile line
-*** TODO delete Utils.cpp
+** TODO update the Makeflie
+** TODO make libary create index out of files.
+*** DONE remvoe unnecessary makefile line
+*** TODO delete Utils.cp
+p
+
 
 
 * General

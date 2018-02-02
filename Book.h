@@ -39,6 +39,7 @@ private:
    * Description:
    *   Loads all words (seperated by whitespace only) into an array pointed to by
    *   'wordsArray'.  This will contain both duplicates and punctuation.
+   * TODO - change name to initial read or something similair
    *
    * Inputs: 
    *   None

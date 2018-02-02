@@ -101,6 +101,7 @@ void Book::cleanWords() {
   }
 }
 
+// TODO - remove empty rename
 void Book::updateBookAttributes() {
   // make a new temp pointer and initialize to wordsArrayPtr
   std::string* tempWordPtr = 0;
@@ -140,4 +141,30 @@ void Book::updateBookAttributes() {
 void Book::alphabetizeWords() {
   // just run through merge sort algorithm
   wordsArrayPtr = mergeSort(wordsArrayPtr, numOfWords);
+}
+
+void Book::removeDuplicates() {
+  // This will only work for a pre-sorted array, duplicates must be next
+  // to each other in order to be removed.  Only looks one spot ahead.
+  std::string* tempWordPtr = new std::string[numOfWords];
+  int tempCounter = 0;
+
+  // copy 1 of each term (no doubles) to temp array
+  for (int i = 0; i < numOfWords; i++) {
+    if (tempWordPtr[i] != tempWordPtr[i+1]) {
+      tempWordPtr[tempCounter] = tempWordPtr[i];
+      tempCounter++;
+    }
+  }
+
+  wordsArrayPtr = new std::string[tempCounter];
+  numOfWords = tempCounter;
+
+  // copy everything back to original array
+  for (int i = 0; i < tempCounter; i++) {
+    wordsArrayPtr[i] = tempWordPtr[i];
+  }
+
+  // delete temp array
+  delete[] tempWordPtr;
 }
