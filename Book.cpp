@@ -9,6 +9,7 @@
 #include "Utils.h"  
 #include <iostream> //STDIN, STDOUT
 #include <fstream>  //ifstream
+#include <cstdlib>  //tolower
 
 Book::Book() {
   fileName = "fake.txt";
@@ -88,9 +89,16 @@ void Book::cleanWords() {
 	 j--;
        }
     }
-    std::cout << wordsArrayPtr[i].length() << std::endl;
+     //std::cout << wordsArrayPtr[i].length() << std::endl;
   }
   updateBookAttributes();
+
+  // convert to lowercase
+  for (int i = 0; i < numOfWords; i++) {
+    for (int j = 0; j < wordsArrayPtr[i].size(); j++) {
+      wordsArrayPtr[i][j] = std::tolower(wordsArrayPtr[i][j]);
+    }
+  }
 }
 
 void Book::updateBookAttributes() {
@@ -130,13 +138,6 @@ void Book::updateBookAttributes() {
 
 
 void Book::alphabetizeWords() {
-  // make temp variables
-  //std::string* = tempWordPtr = 0;
-  //tempWordPtr = wordsArrayPtr;
-  // create two temp arrays for sorting algorithm
-  wordsArrayPtr = Utils::mergeSort(wordsArrayPtr);
-  // attempting to use merge sort
-  int middle = numOfWords/2;
-
-};
-*/
+  // just run through merge sort algorithm
+  wordsArrayPtr = mergeSort(wordsArrayPtr, numOfWords);
+}

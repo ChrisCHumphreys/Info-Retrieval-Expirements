@@ -8,7 +8,7 @@
 #include <iostream>
 #include "Utils.h"
 
-std::string* Utils::mergeSort(std::string* unsorted) {
+std::string* mergeSort(std::string* unsorted) {
   std::cout << "Merge Sort Ran" << std::endl;
   return unsorted;
 };

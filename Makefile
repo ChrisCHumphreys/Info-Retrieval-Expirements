@@ -22,11 +22,8 @@ $(TARGET): readIn.o Book.o
 readIn.o: readIn.cpp Book.h
 	$(CC) $(CFLAGS) readIn.cpp
 
-Book.o: Book.cpp Book.h Utils.o
+Book.o: Book.cpp Book.h Utils.h
 	$(CC) $(CFLAGS) Book.cpp
-
-Utils.o: Utils.cpp Utils.o
-	$(CC) $(CFLAGS) Utils.cpp
 
 clean:
 	rm *.o *~ $(TARGET)

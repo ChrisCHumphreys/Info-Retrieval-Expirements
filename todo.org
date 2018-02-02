@@ -1,15 +1,20 @@
-* Tokenizer
-** TODO make alphabetizer function
+* Tokenizer*
+** TODO Remove numbers from words array
+** DONE make alphabetizer function
+** TODO make a turn to lowercase function
 ** TODO make removeDouble function
 ** TODO make final constuctor which does everything
-** TODO make a utilities library
-** TODO make a merge sort function in utilities library
+** DONE make a utilities library
+** DONE make a merge sort function in utilities library
 
 
 * Library Class
 ** TODO make the class
 ** TODO make the .cpp file
 ** TODO update the Makefile
+*** TODO remvoe unnecessary makefile line
+*** TODO delete Utils.cpp
+
 
 * General
 ** DONE update readme
