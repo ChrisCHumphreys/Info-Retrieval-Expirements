@@ -2,21 +2,20 @@
 Trying to reinvent the wheel of Information Retrieval so I can better understand it.
 
 Warning:
-  This code is very much at the beginning stages.  It doesn't do much right now, and what it does is not
-  intuitive or done very well.  Hopefully in time this will change.
+  Code is under active development, may not run as intended.  Use at own risk.
 
 Description:
   I am attempting to make a very basic search engine in c++ so I can better understand the principles
   of information retrieval.  I am doing this in my spare time so it will probably move slowly.  Eventually,
   given a library of text files, I would like to be able to perform boolean searches for different words
   and be able to be reasonably confident that the results acheived were those desired by the user.
+
+  Strech Goals:
+    Add a stemmer and also account for misspelled words.
   
 TODO:
-  In progress -  
-  Make a utilities class with a merge sort algorithm.  should accept an usorted array pointer and
-  return a sorted array pointer.
+  See todo.org file
 
-  Future -
   Create a Library class that contains the book objects
   make a main that allows a user to specify the library folder and do boolean searches.
   
