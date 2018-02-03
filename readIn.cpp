@@ -17,9 +17,5 @@ using namespace std;
 
 int main() {
   Book book1(PATH_TO_TEXT_FILES + FILE_BEING_READ);
-  // book1.test();
-  book1.cleanWords();
-  book1.alphabetizeWords();
-  book1.removeDuplicates();
-  book1.printCurrentArray();
+  Book book2();
 }

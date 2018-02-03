@@ -30,6 +30,8 @@
 *.exe
 *.out
 *.app
+tokenizer
 
 # emacs
 *~
+

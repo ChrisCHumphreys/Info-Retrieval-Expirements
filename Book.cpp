@@ -15,6 +15,7 @@ Book::Book() {
   fileName = "fake.txt";
   wordsArrayPtr = 0;
   numOfWords = 0;
+  // TODO throw exception - communicate to user.
 }
 
 Book::Book(std::string newFile) {
@@ -22,15 +23,16 @@ Book::Book(std::string newFile) {
   wordsArrayPtr = 0;
   findInitialSize();
   makeWhitespaceIndex();
+  cleanWords();
+  alphabetizeWords();
+  removeDuplicates();
+  // DO NOT PRINT LATER
+  printCurrentArray();
 }
 
 Book::~Book() {
   wordsArrayPtr = 0;
   delete[] wordsArrayPtr;
-}
-
-void Book::test() {
-  std::cout << "This number of words is: " << numOfWords << std::endl;
 }
 
 void Book::findInitialSize() {
@@ -89,9 +91,8 @@ void Book::cleanWords() {
 	 j--;
        }
     }
-     //std::cout << wordsArrayPtr[i].length() << std::endl;
   }
-  updateBookAttributes();
+  removeEmpty();
 
   // convert to lowercase
   for (int i = 0; i < numOfWords; i++) {
@@ -101,8 +102,7 @@ void Book::cleanWords() {
   }
 }
 
-// TODO - remove empty rename
-void Book::updateBookAttributes() {
+void Book::removeEmpty() {
   // make a new temp pointer and initialize to wordsArrayPtr
   std::string* tempWordPtr = 0;
   tempWordPtr = wordsArrayPtr;
@@ -157,6 +157,7 @@ void Book::removeDuplicates() {
     }
   }
 
+  delete[] wordsArrayPtr;
   wordsArrayPtr = new std::string[tempCounter];
   numOfWords = tempCounter;
 

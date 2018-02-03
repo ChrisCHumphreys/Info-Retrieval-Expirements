@@ -25,7 +25,7 @@ private:
    * Description:
    *   Does a run through the file to determine the number of 'words'.  Assigns
    *   this value to Book.numOfWords.  This is very initial.  It only counts
-   *   based on whitespace with no filtering whatsoever.
+  *   based on whitespace with no filtering whatsoever.
    *   
    * Inputs:
    *   None
@@ -39,20 +39,17 @@ private:
    * Description:
    *   Loads all words (seperated by whitespace only) into an array pointed to by
    *   'wordsArray'.  This will contain both duplicates and punctuation.
-   * TODO - change name to initial read or something similair
-   *
-   * Inputs: 
+   * 
    *   None
    * 
    * Outputs:
    *   None - Creates a dynamic array pointed to by 'wordsArray'.
    */
 
-  void updateBookAttributes();
+  void removeEmpty();
   /*
    * Description:
-   *   Resizes the array of words and updates attributes of Book
-   *   accordingly.  Called after doing things like removing words.
+   *   Removes all empty spots from array and updates Book attributes.
    *
    * Inputs:
    *   None
@@ -60,6 +57,45 @@ private:
    * Outputs:
    *   None - updates 'wordsArrayPtr', and 'numOfWords' attributes
    *
+   */
+
+  void cleanWords();
+  /*
+   * Description:
+   *   Goes through the document and updates array to remove all punctuation
+   *   and numeric digits from words.
+   *
+   * Inputs:
+   *   None:
+   *     Works on its own array of words and updates to remove the whitespace.
+   *
+   * Outputs:
+   *   None:
+   */
+  
+  void alphabetizeWords();
+  /*
+   * Description:
+   *   Loops through the books wordsArray and updates the order of the words
+   *   to put in alphabetical order.
+   *
+   * Inputs:
+   *   None - works on wordsArrayPtr
+   *
+   * Outputs:
+   *   None - after completion all words in wordsArrayPtr are in order
+   */
+
+  void removeDuplicates();
+  /*
+   * Description:
+   *   Removes all duplicate entries from wordsArrayPtr
+   *
+   * Inputs:
+   *   None
+   *
+   * Outputs:
+   *   None - udpates Book attributes
    */
   
 public:
@@ -100,50 +136,5 @@ public:
    *
    * Outpus:
    *   None
-   */
-
-  void cleanWords();
-  /*
-   * Description:
-   *   Goes through the document and updates array to remove all punctuation
-   *   and numeric digits from words.
-   *
-   * Inputs:
-   *   None:
-   *     Works on its own array of words and updates to remove the whitespace.
-   *
-   * Outputs:
-   *   None:
-   */
-  
-  void test();
-  /* 
-   * Desription: 
-   *   Just a test method to ensure that is adjusted for use as
-   *   the program evolves.
-   * 
-   * Inputs: 
-   *   None
-   *
-   * Outputs:
-   *   None
-   */
-
-  void alphabetizeWords();
-  /*
-   * Description:
-   *   Loops through the books wordsArray and updates the order of the words
-   *   to put in alphabetical order.
-   *
-   * Inputs:
-   *   None - works on wordsArrayPtr
-   *
-   * Outputs:
-   *   None - after completion all words in wordsArrayPtr are in order
-   */
-
-  void removeDuplicates();
-  /*
-   * TODO - Add Documentation
    */
 };

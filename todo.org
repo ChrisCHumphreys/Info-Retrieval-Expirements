@@ -2,7 +2,7 @@
 ** DONE Remove numbers from words array
 ** DONE make alphabetizer function
 ** DONE make a turn to lowercase function
-** TODO make removeDouble function
+** DONE make removeDouble function
 ** TODO make final constuctor which does everything
 ** DONE make a utilities library
 ** DONE make a merge sort function in utilities library
@@ -22,3 +22,4 @@ p
 * General
 ** DONE update readme
 ** TODO add utf-32 support
+** TODO rename functions in Book.cpp   
