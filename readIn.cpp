@@ -8,6 +8,7 @@
 
 #include <string> 
 #include "Book.h"
+#include "InvertedIndex.h"
 
 // test files are littleTest.txt and 2000010.txt
 const std::string FILE_BEING_READ = "warpeace.txt";
@@ -16,6 +17,6 @@ const std::string PATH_TO_TEXT_FILES = "books/";
 using namespace std;
 
 int main() {
-  Book book1(PATH_TO_TEXT_FILES + FILE_BEING_READ);
-  Book book2();
+  //  Book book1(PATH_TO_TEXT_FILES + FILE_BEING_READ);
+  InvertedIndex test("cd /home/chris/ResearchProject/myCode/books/");
 }

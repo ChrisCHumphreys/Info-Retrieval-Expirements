@@ -6,20 +6,20 @@
 ** DONE make final constuctor which does everything
 ** DONE make a utilities library
 ** DONE make a merge sort function in utilities library
+** TODO throw exception for default book constructor
 
-
-* Library Class
-** TODO make the class
-** TODO make the .cpp file
-** TODO update the Makeflie
+* InvertedIndex Class
+** DONE make the class
+** DONE make the .cpp file
+** DONE update the Makeflie
 ** TODO make libary create index out of files.
 *** DONE remvoe unnecessary makefile line
-*** TODO delete Utils.cp
-p
-
-
+*** DONE delete Utils.cpp
+*** TODO throw exception for creation of default InvertedIndex
 
 * General
 ** DONE update readme
 ** TODO add utf-32 support
 ** DONE rename functions in Book.cpp   
+** TODO Find some way to ID books
+

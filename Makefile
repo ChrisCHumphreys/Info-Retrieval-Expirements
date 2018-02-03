@@ -9,21 +9,24 @@ CC=g++
 DEBUG=-g
 
 # Target
-TARGET=tokenizer
+TARGET=indexer
 
 #Compile with all errors and warnings
 CFLAGS=-c -Wall $(DEBUG)
 
 all: $(TARGET)
 
-$(TARGET): readIn.o Book.o 
-	$(CC) readIn.o Book.o -o $(TARGET)
+$(TARGET): readIn.o Book.o InvertedIndex.o 
+	$(CC) readIn.o Book.o InvertedIndex.o -o $(TARGET)
 
-readIn.o: readIn.cpp Book.h
+readIn.o: readIn.cpp InvertedIndex.h
 	$(CC) $(CFLAGS) readIn.cpp
 
 Book.o: Book.cpp Book.h Utils.h
 	$(CC) $(CFLAGS) Book.cpp
+
+InvertedIndex.o: InvertedIndex.cpp InvertedIndex.h
+	$(CC) $(CFLAGS) InvertedIndex.cpp
 
 clean:
 	rm *.o *~ $(TARGET)
