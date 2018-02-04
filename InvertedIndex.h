@@ -12,6 +12,7 @@
 class InvertedIndex {
  private:
   std::string* fileName;
+  char* dir_name;
   int* DocIds;
   // path to folder contating files
   std::string filePath;
@@ -31,6 +32,8 @@ class InvertedIndex {
    */
   InvertedIndex(std::string filePath);
   ~InvertedIndex();
+  void explore(char* dir_name);
   void setFilePath(std::string filePath);
   void reCreateIndex(std::string filePath);
+  
 };
