@@ -27,7 +27,7 @@ Book::Book(std::string newFile) {
   alphabetizeWords();
   removeDuplicates();
   // DO NOT PRINT LATER
-  printCurrentArray();
+  //printCurrentArray();
 }
 
 Book::~Book() {

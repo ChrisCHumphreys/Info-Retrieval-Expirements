@@ -6,7 +6,8 @@
  *   will read a text file into an array.  More to come.
  */
 
-#include <string> 
+#include <string>
+#include <iostream>
 #include "Book.h"
 #include "InvertedIndex.h"
 
@@ -17,6 +18,9 @@ const std::string PATH_TO_TEXT_FILES = "books/";
 using namespace std;
 
 int main() {
+  //std::string userInput = " ";
   //  Book book1(PATH_TO_TEXT_FILES + FILE_BEING_READ);
+  //std::cout << "Please enter file path to book location: " << std::endl;
+  //std::cin >> userInput;
   InvertedIndex test("/home/chris/ResearchProject/myCode/books");
 }

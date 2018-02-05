@@ -18,22 +18,28 @@ InvertedIndex::InvertedIndex() {
 }
 
 InvertedIndex::InvertedIndex(std::string filePath) {
-  //char* directory = filePath.c_str();
   fileNames = 0;
   fileCounter = 0;
   explore((char*)filePath.c_str());
   // create new array for filenames
+  // create a new array for books
   fileNames = new std::string[fileCounter];
+  documentList = new Book[fileCounter]; 
   fileCounter = 0;
   explore((char*)filePath.c_str());
-  std::cout << "Total # of files = " << fileCounter << std::endl;
-  for (int i = 0; i < fileCounter; i++) {
-    std::cout << *(fileNames + i) << std::endl;
-  }
+  createDocuments();
+  
+  (documentList+3)->printCurrentArray();
+  // leaving in for testing for now.
+  //std::cout << "Total # of files = " << fileCounter << std::endl;
+  //for (int i = 0; i < fileCounter; i++) {
+  //  std::cout << *(fileNames + i) << std::endl;
+  //}
 }
 
 InvertedIndex::~InvertedIndex() {
   delete[] fileNames;
+  delete[] documentList;
 }
 
 void InvertedIndex::explore(char* dir_name) {
@@ -66,6 +72,13 @@ void InvertedIndex::explore(char* dir_name) {
   closedir(dir);
 
 }
+
+void InvertedIndex::createDocuments() {
+  for (int i = 0; i < fileCounter; i++) {
+    *(documentList + i) = Book("books/" + *(fileNames + i)); 
+  }
+}
+
   // std::cin >> "/users/chris/Documents/books/" >> std::endl;
 
   // TODO file path attribute
