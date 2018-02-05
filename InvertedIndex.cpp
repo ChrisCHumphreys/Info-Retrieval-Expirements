@@ -29,7 +29,7 @@ InvertedIndex::InvertedIndex(std::string filePath) {
   explore((char*)filePath.c_str());
   createDocuments();
   
-  (documentList+3)->printCurrentArray();
+  (documentList+4)->printCurrentArray();
   // leaving in for testing for now.
   //std::cout << "Total # of files = " << fileCounter << std::endl;
   //for (int i = 0; i < fileCounter; i++) {
