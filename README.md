@@ -21,7 +21,7 @@ TODO:
   
 Usage:
   On linux systems with g++ and make, just go into the root of the project and type `make`.  There will be 
-  a new executeable called `tokenizer`.  Just type `./tokenizer` to run.
+  a new executeable called `indexer`.  Just type `./indexer` to run.
   
 Assumptions:
   This is very much code for testing and playing around.  To have it work on other files you need to go to 
