@@ -30,6 +30,7 @@ InvertedIndex::InvertedIndex(std::string filePath) {
 }
 
 InvertedIndex::~InvertedIndex() {
+  // destructor
   delete[] fileNames;
   delete[] documentList;
 }
@@ -66,14 +67,15 @@ void InvertedIndex::explore(char* dir_name) {
 }
 
 void InvertedIndex::createDocuments() {
+  // simple loop that creates one book object for each
+  // file in the filenames array.  Stores them all in
+  // documentList.
   for (int i = 0; i < fileCounter; i++) {
     *(documentList + i) = Book("books/" + *(fileNames + i)); 
   }
 }
 
-  // std::cin >> "/users/chris/Documents/books/" >> std::endl;
-
-  // TODO file path attribute
+   // TODO file path attribute
   // Book id array - parrallel
   // book filenames - parallel
 

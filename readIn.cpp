@@ -22,5 +22,5 @@ int main() {
   //  Book book1(PATH_TO_TEXT_FILES + FILE_BEING_READ);
   //std::cout << "Please enter file path to book location: " << std::endl;
   //std::cin >> userInput;
-  InvertedIndex test("/home/chris/ResearchProject/myCode/books");
+  InvertedIndex test("./books");
 }
