@@ -8,6 +8,9 @@
 ** DONE make a merge sort function in utilities library
 ** TODO throw exception for default book constructor
 
+** TODO update git link on twitch
+** TODO update local repos
+
 * InvertedIndex Class
 ** DONE make the class
 ** DONE make the .cpp file
