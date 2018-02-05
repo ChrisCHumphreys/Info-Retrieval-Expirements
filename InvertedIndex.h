@@ -11,7 +11,8 @@
 
 class InvertedIndex {
  private:
-  std::string* fileName;
+  int fileCounter;
+  std::string* fileNames;
   char* dir_name;
   int* DocIds;
   // path to folder contating files

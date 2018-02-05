@@ -19,11 +19,21 @@ InvertedIndex::InvertedIndex() {
 
 InvertedIndex::InvertedIndex(std::string filePath) {
   //char* directory = filePath.c_str();
+  fileNames = 0;
+  fileCounter = 0;
   explore((char*)filePath.c_str());
+  // create new array for filenames
+  fileNames = new std::string[fileCounter];
+  fileCounter = 0;
+  explore((char*)filePath.c_str());
+  std::cout << "Total # of files = " << fileCounter << std::endl;
+  for (int i = 0; i < fileCounter; i++) {
+    std::cout << *(fileNames + i) << std::endl;
+  }
 }
 
 InvertedIndex::~InvertedIndex() {
-  // do something someday
+  delete[] fileNames;
 }
 
 void InvertedIndex::explore(char* dir_name) {
@@ -40,16 +50,21 @@ void InvertedIndex::explore(char* dir_name) {
 
   while((entry = readdir(dir)) != NULL) {
     if (entry->d_name[0] != '.') {
-      std::string path = std::string(dir_name) + "/" + std::string(entry->d_name);
-      std::cout << "Entry = " << path << std::endl;
-      stat(path.c_str(), &info);
-      if (S_ISDIR(info.st_mode)){
-	explore((char*)path.c_str());
+      if (fileNames != 0) {
+	*(fileNames + fileCounter) = entry->d_name;
       }
+      //std::string path = std::string(dir_name) + "/" + std::string(entry->d_name);
+      //std::cout << "Entry = " << path << std::endl;
+      //stat(path.c_str(), &info);
+      fileCounter++;
+      //if (S_ISDIR(info.st_mode)){
+      //explore((char*)path.c_str());
+      //}
     }
   }
 
   closedir(dir);
+
 }
   // std::cin >> "/users/chris/Documents/books/" >> std::endl;
 

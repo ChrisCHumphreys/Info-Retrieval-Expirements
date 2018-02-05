@@ -18,5 +18,5 @@ using namespace std;
 
 int main() {
   //  Book book1(PATH_TO_TEXT_FILES + FILE_BEING_READ);
-  InvertedIndex test("/home/chris/ResearchProject/myCode/books/");
+  InvertedIndex test("/home/chris/ResearchProject/myCode/books");
 }
