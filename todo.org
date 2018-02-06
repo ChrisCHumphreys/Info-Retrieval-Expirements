@@ -25,4 +25,5 @@
 ** TODO add utf-32 support
 ** DONE rename functions in Book.cpp   
 ** TODO Find some way to ID books
+** TODO follow tacoBandit
 

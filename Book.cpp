@@ -169,3 +169,11 @@ void Book::removeDuplicates() {
   // delete temp array
   delete[] tempWordPtr;
 }
+
+void Book::setDocID(int id) {
+  docID = id;
+}
+
+int Book::getDocID() {
+  return docID;
+}

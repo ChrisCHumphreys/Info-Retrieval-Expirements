@@ -19,6 +19,7 @@ private:
   std::string fileName;
   std::string* wordsArrayPtr;
   int numOfWords;
+  int docID;
 
   void findInitialSize();
   /*
@@ -136,5 +137,29 @@ public:
    *
    * Outpus:
    *   None
+   */
+
+  void setDocID(int id);
+  /*
+   * Description:
+   *   Simple setter for DocID which will be used by indexer.
+   *
+   * Inputs:
+   *   Int id - an integer representing the document ID number.
+   *
+   * Outputs;
+   *   None:
+   */
+
+  int getDocID();
+  /*
+   * Description:
+   *   Simple getter for DocID which will be used by indexer.
+   *
+   * Inputs:
+   *   None:
+   *
+   * Outputs;
+   *   int - an integer representing a docID.
    */
 };

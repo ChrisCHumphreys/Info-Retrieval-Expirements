@@ -30,6 +30,7 @@ InvertedIndex::InvertedIndex(std::string filePath) {
 }
 
 InvertedIndex::~InvertedIndex() {
+  // clean up old files
   delete[] fileNames;
   delete[] documentList;
 }
@@ -51,6 +52,7 @@ void InvertedIndex::explore(char* dir_name) {
       if (fileNames != 0) {
 	*(fileNames + fileCounter) = entry->d_name;
       }
+      // old output for testing wether stream was working, keeping jic
       //std::string path = std::string(dir_name) + "/" + std::string(entry->d_name);
       //std::cout << "Entry = " << path << std::endl;
       //stat(path.c_str(), &info);
@@ -68,25 +70,40 @@ void InvertedIndex::explore(char* dir_name) {
 void InvertedIndex::createDocuments() {
   for (int i = 0; i < fileCounter; i++) {
     *(documentList + i) = Book("books/" + *(fileNames + i)); 
+    (documentList + i)->setDocID(i);
+    // Leaving in - Looks Cool
+    std::cout << "This is the doc id: " << (documentList + i)->getDocID() << std::endl;
+    std::cout << "This is the doc filename: " << *(fileNames + i) << std::endl;
   }
 }
 
-  // std::cin >> "/users/chris/Documents/books/" >> std::endl;
-
-  // TODO file path attribute
-  // Book id array - parrallel
-  // book filenames - parallel
-
-
-  // REad in all files from path
-  //   create a book object for each file
-  //   Assign doc id to each file
-
-
+void InvertedIndex::createIndex() {
   // Create index
-  // create 2d array
-  //   arrar[i] term
-  //   array[i][j] doc id's
 
+  // documentList
+
+  // create an object for each word in doc1
+  // create an object for 
+  // for all additional documents
+  //    count number of additional items
+  //    make new array of size oldArray + new Items
+  //    fill new array with old terms + new terms in order
+  //
+  // for all documents
+  //    check if term is in termlist
+  //    if so add docId to term
+  //
   // save index to disk as index.txt
 
+}
+
+
+//Bob 3 8
+//run 2 8 10
+//cat 1 4
+//dog 2 9 12
+
+// term object
+//
+// term - bob
+// array -> docids
