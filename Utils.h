@@ -5,6 +5,10 @@
  * File: Utils.h
  */
 
+#ifndef UTILS_H
+#define UTILS_H
+
+
 #include <string>
 #include <iostream>
 
@@ -83,3 +87,5 @@ int min(int A, int B) {
     return B;
   }
 }
+
+#endif

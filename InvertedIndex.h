@@ -6,18 +6,22 @@
  *   library class.
  */
 
-#include <string>
+#ifndef INVERTEDINDEX_H
+#define INVERTEDINDEX_H
 
+#include <string>
+#include "Term.h"
 
 class InvertedIndex {
  private:
   int fileCounter;         // number of books in documentList
-  Book* documentList;      // array of book objectes
+  Book* documentList;      // array of book objects
   std::string* fileNames;  // array of filenames
   char* dir_name;          // directory where books are stored
   int* DocIds;             // integer id number for docs
   std::string filePath;    // path to folder contating files
-
+  Term* termList;          // array of term objects
+  
   void explore(char* dir_name);
   /*
    *  Description:
@@ -91,3 +95,5 @@ class InvertedIndex {
    *    None
    */
 };
+
+#endif

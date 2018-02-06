@@ -177,3 +177,11 @@ void Book::setDocID(int id) {
 int Book::getDocID() {
   return docID;
 }
+
+int Book::getNumOfWords() {
+  return numOfWords;
+}
+
+std::string* Book::getwordsArrayPtr() {
+  return wordsArrayPtr;
+}

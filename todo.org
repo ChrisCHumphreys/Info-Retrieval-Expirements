@@ -10,7 +10,7 @@
 
 ** TODO update git link on twitch
 ** TODO update local repos
-
+   
 * InvertedIndex Class
 ** DONE make the class
 ** DONE make the .cpp file
@@ -20,10 +20,16 @@
 *** DONE delete Utils.cpp
 *** TODO throw exception for creation of default InvertedIndex
 
+* Term.h items
+** TODO document term.h functions and file
+** TODO update makefile
+
+* Book.h items
+** TODO document new getters
 * General
 ** DONE update readme
 ** TODO add utf-32 support
 ** DONE rename functions in Book.cpp   
 ** TODO Find some way to ID books
-** TODO follow tacoBandit
-
+** DONE follow tacoBandit
+** TODO make a copy array function in Utils.h

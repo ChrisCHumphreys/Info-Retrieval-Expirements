@@ -16,8 +16,8 @@ CFLAGS=-c -Wall $(DEBUG)
 
 all: $(TARGET)
 
-$(TARGET): readIn.o Book.o InvertedIndex.o 
-	$(CC) readIn.o Book.o InvertedIndex.o -o $(TARGET)
+$(TARGET): readIn.o Book.o InvertedIndex.o Term.o
+	$(CC) readIn.o Book.o InvertedIndex.o Term.o -o $(TARGET)
 
 readIn.o: readIn.cpp InvertedIndex.h
 	$(CC) $(CFLAGS) readIn.cpp
@@ -25,8 +25,11 @@ readIn.o: readIn.cpp InvertedIndex.h
 Book.o: Book.cpp Book.h Utils.h
 	$(CC) $(CFLAGS) Book.cpp
 
-InvertedIndex.o: InvertedIndex.cpp InvertedIndex.h
+InvertedIndex.o: InvertedIndex.cpp InvertedIndex.h Term.h
 	$(CC) $(CFLAGS) InvertedIndex.cpp
+
+Term.o: Term.cpp Term.h
+	$(CC) $(CFLAGS) Term.cpp
 
 clean:
 	rm *.o *~ $(TARGET)

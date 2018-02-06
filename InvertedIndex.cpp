@@ -12,6 +12,7 @@
 #include <sys/stat.h>
 #include "Book.h"
 #include "InvertedIndex.h"
+#include "Term.h"
 
 InvertedIndex::InvertedIndex() {
   // TODO - throw exception
@@ -33,6 +34,7 @@ InvertedIndex::~InvertedIndex() {
   // clean up old files
   delete[] fileNames;
   delete[] documentList;
+  delete[] termList;
 }
 
 void InvertedIndex::explore(char* dir_name) {
@@ -74,27 +76,67 @@ void InvertedIndex::createDocuments() {
     // Leaving in - Looks Cool
     std::cout << "This is the doc id: " << (documentList + i)->getDocID() << std::endl;
     std::cout << "This is the doc filename: " << *(fileNames + i) << std::endl;
+    //createIndex();
   }
+  createIndex();
 }
 
 void InvertedIndex::createIndex() {
   // Create index
+  // temporary term object to hold objects during index creation.
+  Term tempTerm;
+  
+  
+  // for each document in documentList
+  for (int i = 0; i < 1; i++) {
+    // for each term in that documents termList
+    termList = new Term[documentList[i].getNumOfWords()];
+    for (int j = 0; j < (documentList + i)->getNumOfWords(); j++) {
+      // create a term object
+      tempTerm = Term(*((documentList + i)->getwordsArrayPtr() + j));
+      tempTerm.incrementDocCount();
+      tempTerm.addDocID(i); 
+      *(termList + j) = tempTerm;
+      // std::cout << (termList + j)->getTerm() << std::endl;
+      //std::cout << "Print a lot" << std::endl;
+    }
 
-  // documentList
+    Term* oldPtr = termList;
+    std::string* newPtr = documentList[i].wordsArrayPtr;
+    int additionalTerms = 0;
+    
+    if (i >= 1) {
+      while ((oldPtr->getTerm() != NULL) && (newPtr != NULL)) {
+	
+      // find out how many more unique entries there are
+ 
+	  if (*oldPtr == *newPtr) {
+	    oldPtr++;
+	    newPtr++;
+	  }
+	  else if (*oldPtr < *newPtr) {
+	    *oldPtr++;
+	    additionalTerms++;
+	  }
+	  else if (*oldPtr > *newPtr) {
+	    *newPtr++;
+	    additionalTerms++;
+	  }
+      
+	  // resize the current array to hold both
+	  // refill the old array
+	}
+    }
+    additionalTerms = 0;
+  }
 
-  // create an object for each word in doc1
-  // create an object for 
-  // for all additional documents
-  //    count number of additional items
-  //    make new array of size oldArray + new Items
-  //    fill new array with old terms + new terms in order
-  //
-  // for all documents
-  //    check if term is in termlist
-  //    if so add docId to term
-  //
-  // save index to disk as index.txt
-
+  for (int i = 0; i < documentList[0].getNumOfWords(); i++) {
+    std::cout << (termList + i)->getTerm() << std::endl;
+  }
+  //                    v
+  //old  A  C   F   J   
+  //                        v
+  //new  A  B   F   R   T
 }
 
 

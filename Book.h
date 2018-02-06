@@ -4,6 +4,9 @@
  * File: Book.h
  * Description: Header for Book Class.
  */
+#ifndef BOOK_H
+#define BOOK_H
+
 #include <string> 
 
 class Book {
@@ -14,7 +17,7 @@ class Book {
  *   be methods to strip them of punctuation, and to stem them.
  */
 
-private:
+ private:
   // Name of the file on disk
   std::string fileName;
   std::string* wordsArrayPtr;
@@ -162,4 +165,16 @@ public:
    * Outputs;
    *   int - an integer representing a docID.
    */
+
+  int getNumOfWords();
+  /*
+   * TODO - DOCUMETN
+   */
+
+  std::string* getwordsArrayPtr();
+  /*
+   * TODO - DOCUMENT ME!
+   */
 };
+
+#endif

@@ -10,6 +10,7 @@
 #include <iostream>
 #include "Book.h"
 #include "InvertedIndex.h"
+// #include "Term.h"
 
 // test files are littleTest.txt and 2000010.txt
 const std::string FILE_BEING_READ = "warpeace.txt";
