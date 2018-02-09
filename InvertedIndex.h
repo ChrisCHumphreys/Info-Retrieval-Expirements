@@ -11,6 +11,7 @@
 
 #include <string>
 #include "Term.h"
+#include "Book.h"
 
 class InvertedIndex {
  private:
