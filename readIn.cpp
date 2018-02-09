@@ -14,7 +14,7 @@
 
 // test files are littleTest.txt and 2000010.txt
 const std::string FILE_BEING_READ = "warpeace.txt";
-const std::string PATH_TO_TEXT_FILES = "books/";
+const std::string PATH_TO_TEXT_FILES = "/home/chris/ResearchProject/myCode/books";
 
 using namespace std;
 
@@ -23,5 +23,5 @@ int main() {
   //  Book book1(PATH_TO_TEXT_FILES + FILE_BEING_READ);
   //std::cout << "Please enter file path to book location: " << std::endl;
   //std::cin >> userInput;
-  InvertedIndex test("./books");
+  InvertedIndex test(PATH_TO_TEXT_FILES);
 }

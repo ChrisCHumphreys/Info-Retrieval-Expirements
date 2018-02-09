@@ -100,11 +100,10 @@ void InvertedIndex::createIndex() {
       // std::cout << (termList + j)->getTerm() << std::endl;
       //std::cout << "Print a lot" << std::endl;
     }
-
     Term* oldPtr = termList;
-    std::string* newPtr = documentList[i].wordsArrayPtr;
+    //std::string* newPtr = documentList[i].wordsArrayPtr;
     int additionalTerms = 0;
-    
+   /*
     if (i >= 1) {
       while ((oldPtr->getTerm() != NULL) && (newPtr != NULL)) {
 	
@@ -122,11 +121,12 @@ void InvertedIndex::createIndex() {
 	    *newPtr++;
 	    additionalTerms++;
 	  }
-      
+
 	  // resize the current array to hold both
 	  // refill the old array
-	}
+	  }
     }
+      */
     additionalTerms = 0;
   }
 
