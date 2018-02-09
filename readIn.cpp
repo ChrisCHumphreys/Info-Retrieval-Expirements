@@ -16,10 +16,10 @@ const std::string PATH_TO_TEXT_FILES = "/home/chris/ResearchProject/myCode/books
 using namespace std;
 
 int main() {
-  //std::string userInput = " ";
-  //  Book book1(PATH_TO_TEXT_FILES + FILE_BEING_READ);
-  //std::cout << "Please enter file path to book location: " << std::endl;
-  //std::cin >> userInput;
+    //std::string userInput = " ";
+    //  Book book1(PATH_TO_TEXT_FILES + FILE_BEING_READ);
+    //std::cout << "Please enter file path to book location: " << std::endl;
+    //std::cin >> userInput;
 
-  InvertedIndex test(PATH_TO_TEXT_FILES);
+    InvertedIndex test(PATH_TO_TEXT_FILES);
 }
